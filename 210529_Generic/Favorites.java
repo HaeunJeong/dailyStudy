@@ -1,6 +1,10 @@
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
+
+
+import com.sun.xml.internal.bind.api.TypeReference;
+import com.sun.xml.internal.bind.v2.model.core.TypeRef;
+
+import java.lang.reflect.ParameterizedType;
+import java.util.*;
 
 class Favorites{
     private Map<Class<?>, Object> favorites = new HashMap<>(); // <---- Map의 키가 와일드카드 타입으로, 모든 키가 서로 다른 매개변수화 타입일 수 있음.
@@ -19,5 +23,8 @@ class Main{
         f.putFavorite(Class.class, Favorites.class);
 
         System.out.println(f.getFavorite(String.class));
+
+
     }
+
 }
