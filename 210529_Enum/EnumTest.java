@@ -18,7 +18,8 @@ public enum EnumTest {
     public String toString(){
         return symbol;
     }
-    private static final Map<String, EnumTest> stringToEnum = Stream.of(values()).collect(Collectors.toMap(Object::toString, e->e)); //Object::toString은 자기자신 symbol
+    private static final Map<String, EnumTest> stringToEnum =
+            Stream.of(values()).collect(Collectors.toMap(Object::toString, e->e)); //Object::toString은 자기자신 symbol
 
     public static Optional<EnumTest> fromString(String symbol){
         return Optional.ofNullable(stringToEnum.get(symbol));
