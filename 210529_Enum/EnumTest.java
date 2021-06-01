@@ -5,7 +5,7 @@ import java.util.stream.Stream;
 
 public enum EnumTest {
     PLUS("+"){public double apply(double x, double y){return x+y;}},
-    MINUS("-"){public double apply(double x, double y){return x-y;}},
+    MINUS("-"){public double apply(double x, double y){return x-y;}};
 
     private String symbol;
 
