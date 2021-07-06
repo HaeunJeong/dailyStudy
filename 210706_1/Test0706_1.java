@@ -23,7 +23,7 @@ public class Test0706_1 {
         }
         int same = (int) map.keySet().stream().filter(k->map.getOrDefault(k, 0)==2 && k!=0).count();
 
-        answer[0] = 7-(same+map.getOrDefault(0, 0));
+        answer[0] = 7-(same+map.getOrDefault(0, 0)) >=6? 6: 7-(same+map.getOrDefault(0, 0));
         answer[1] = 7-same>=6 ? 6:7-same;
 
         return answer;
