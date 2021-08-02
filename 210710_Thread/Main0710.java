@@ -6,8 +6,8 @@ import java.util.stream.IntStream;
 public class Main0710 {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         //useProduceConsumer();
-        justFixedThreadPool();
-        //System.out.println(Runtime.getRuntime().availableProcessors()); //코어 사이즈
+        //justFixedThreadPool();
+        System.out.println(Runtime.getRuntime().availableProcessors()); //코어 사이즈
 
         return;
 
