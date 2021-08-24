@@ -69,4 +69,5 @@ public class Main08242 {
             this.width = width;
         }
     }
+
 }
