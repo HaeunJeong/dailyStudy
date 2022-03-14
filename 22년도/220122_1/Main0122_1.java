@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-import java.util.stream.Stream;
 
 public class Main0122_1 {
 
@@ -37,6 +36,7 @@ public class Main0122_1 {
             }
         }
 
+        return result;
     }
     public List<Node> getPNode(char[][] placeInt ){
         List<Node> list = new ArrayList<>();
