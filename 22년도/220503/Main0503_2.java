@@ -1,26 +1,33 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 class Main0503_2 {
-        public static void main(String[] args) throws Exception {
-            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-            String input = br.readLine();
-            System.out.println("Hello Goorm! Your input is " + input);
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String input = br.readLine();
 
-            char[] moum = {'a', 'e', 'i', 'o', 'u'};
-            String[] str = input.split("\n");
-            int n = Integer.parseInt(str[0]);
+        int n = Integer.parseInt(input);
 
-            String result;
-            for(int i = 1; i<n+1; i++){
-                char[] chars = str[i].toCharArray();
-                for(char c : chars){
-                    if(moum.contains(c)){
-                        result+=c+"";
-                    }
+        List<Character> moum = new ArrayList<>(Arrays.asList('a', 'e', 'i', 'o', 'u'));
+
+
+        for(int i = 0; i<n; i++){
+            String result="";
+            String inputStr = br.readLine();
+            char[] chars = inputStr.toCharArray();
+            for(char c : chars){
+                if(moum.contains(Character.toLowerCase(c))){
+                    result+=c+"";
                 }
-                result += "";
             }
-
+            if(result.isEmpty()){
+                result +="???";
+            }
             System.out.println(result);
         }
 
+    }
 }
