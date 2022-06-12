@@ -6,14 +6,11 @@ public class MainTest2 {
     static Set<String> menuList = new HashSet<>();
 
     public static void main(String[] args){
-
-        String[] orders = {"XYZ", "XWY", "WXA"};
+        String[] orders = {"GCABF", "CA", "ECD", "ECDA", "BCFG", "ACDEH"};
         int[] course = {2,3,4};
         System.out.println(solution(orders, course));
     }
     public static String[] solution(String[] orders, int[] course) {
-        String[] answer = {};
-
         Map<String, Integer> menuSet = new HashMap<>();
         for(String order: orders){
             for(int i: course){
@@ -24,12 +21,10 @@ public class MainTest2 {
             }
             menuList.clear();
         }
-
         List<String> setList = new ArrayList<>();
         for(int i : course) {
             setList.addAll(getList(menuSet, i));
         }
-
         return setList.stream().sorted().toArray(String[]::new);
     }
     public static List<String> getList(Map<String, Integer> menuSet, int length){
@@ -44,21 +39,17 @@ public class MainTest2 {
         if(r==0){
             menuList.add(getString(args, visited));
         }
-
         if(depth == n){
             return;
         }
-
         visited[depth] = true;
         combination(args, visited, depth+1, n, r-1);
 
         visited[depth] = false;
         combination(args, visited, depth+1, n, r);
-
     }
 
     public static String getString(String[] args, boolean[] visited){
-        StringBuilder builder = new StringBuilder();
         Set<String> sortedSet = new HashSet<>();
         for(int i=0; i<args.length; i++){
             if(visited[i]){
@@ -67,6 +58,4 @@ public class MainTest2 {
         }
         return sortedSet.stream().reduce("", (a,b)->a+b);
     }
-
-
 }
