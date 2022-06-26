@@ -3,6 +3,7 @@ import java.util.stream.Collectors;
 
 public class MainTest2 {
 
+    /*메뉴 리뉴얼 1 */
     static Set<String> menuList = new HashSet<>();
 
     public static void main(String[] args){
